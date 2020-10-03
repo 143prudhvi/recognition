@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '57=6b*-3&7h2t!3@!cegar1)9)7454$co%0oac=)-0srt5z^cc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['facerecognition1511.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
