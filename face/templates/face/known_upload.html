@@ -1,0 +1,8 @@
+{% block content %}
+<h1>Upload Images to Known</h1>
+<form method="post"  enctype="multipart/form-data">
+    {%csrf_token%}
+    {{ form }}
+    <button type="submit">Upload</button>
+</form>
+{% endblock %}

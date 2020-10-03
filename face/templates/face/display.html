@@ -1,0 +1,37 @@
+{% block content %}
+<h1>Hey You Are Here to View Images</h1>
+{% if persons.has_previous %}
+<a href="?page=1"><<</a>
+<a href="?page={{ persons.previous_page_number }}"><</a>
+{% endif %}
+{% for num in persons.paginator.page_range %}
+{% if persons.number == num %}
+<strong>{{ num }}</strong>
+{% elif num > persons.number|add:'-3' and num < persons.number|add:'3' %}
+{{ num }}
+{% endif %}
+{% endfor %}
+{% if persons.has_next %}
+<a href="?page={{ persons.next_page_number }}">></a>
+<a href="?page={{ persons.paginator.num_pages }}">>></a>
+{% endif %}
+<table class="table mb-0">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for person in persons %}
+    <tr>
+        <td>{{ person.name }}</td>
+        <td>
+            <a href=" {{ person.picture.url }} " class="btn btn-primary btn-sm">View Image</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
