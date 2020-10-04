@@ -4,6 +4,6 @@ urlpatterns = [
     # path('', views.index, name='index'),
     path('face/', views.face, name='face'),
     # path('face/upload', views.detect, name='detect'),
-    path('uploadknown/', views.upload, name='upload'),
+    path('', views.upload, name='upload'),
     path('display', views.display, name='display'),
 ]
