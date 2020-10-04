@@ -31,7 +31,6 @@ def detect(request):
         encodes.append(i.name + '_face_encoding')
         files.append(i.picture.url[1:])   # /media/known/filename.jpg
         names.append(i.name)
-    print(names)
 
     for i in range(0, len(encodes)):
         image = face_recognition.load_image_file(files[i])
