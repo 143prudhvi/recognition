@@ -2,7 +2,10 @@
 <h1>Upload Images to Known</h1>
 <form method="post"  enctype="multipart/form-data">
     {%csrf_token%}
-    {{ form }}
+    {{ form.as_p }}
     <button type="submit">Upload</button>
 </form>
+<br>
+<a href="face/" name="detect">Click Here For Detection</a><br><br>
+<a href="display/" name="display">Click Here to Display Known Images</a>
 {% endblock %}
