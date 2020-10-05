@@ -47,7 +47,7 @@ def detect(request):
             name = names[best_match_index]
         cv2.rectangle(uploadedimg, (l, t), (r, b), (0, 255, 255), 3)
         cv2.putText(uploadedimg, name, (l+2, t-20), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 255), 2)
-    cv2.imwrite('face/static/output.jpg', uploadedimg)
+    cv2.imwrite('media/output.jpg', uploadedimg)
     return render(request, 'face/output.html')
 
 def upload(request):
