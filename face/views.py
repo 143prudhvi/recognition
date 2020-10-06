@@ -36,6 +36,10 @@ def detect(request):
         image = face_recognition.load_image_file(files[i])
         encodes[i] = face_recognition.face_encodings(image)[0]
     uploadedimg = cv2.imread(uploaded_file_url[1:])
+    width = uploadedimg.shape[1]
+    height = uploadedimg.shape[0]
+    if width >= 1000 and height >= 1000:
+        uploadedimg = cv2.resize(uploadedimg, (0, 0), fx=0.1, fy=0.1)
     upload_locations = face_recognition.face_locations(uploadedimg)
     upload_encoding = face_recognition.face_encodings(uploadedimg, upload_locations)
     for (t, r, b, l), encode in zip(upload_locations, upload_encoding):
